@@ -30,21 +30,21 @@ services:
       - db
     ports:
       - 5002:8080
-  fhir:
-    image: "tornadoalert/fhir:v5.4.1-nats"
-    environment:
-      spring.datasource.url: "jdbc:postgresql://db:5432/hapi"
-      spring.datasource.username: hapi
-      spring.datasource.password: hapi
-      spring.datasource.driverClassName: org.postgresql.Driver
-      hapi.fhir.subscription.resthook_enabled: "true"
-      hapi.fhir.subscription.websocket_enabled: "true"
-      hapi.fhir.client_id_strategy: ANY
-      hapi.fhir.nats: "nats://nats:4222"
-    depends_on: 
-      - db
-    ports:
-      - 5001:8080
+  # fhir:
+  #   image: "tornadoalert/fhir:v5.4.1-nats"
+  #   environment:
+  #     spring.datasource.url: "jdbc:postgresql://db:5432/hapi"
+  #     spring.datasource.username: hapi
+  #     spring.datasource.password: hapi
+  #     spring.datasource.driverClassName: org.postgresql.Driver
+  #     hapi.fhir.subscription.resthook_enabled: "true"
+  #     hapi.fhir.subscription.websocket_enabled: "true"
+  #     hapi.fhir.client_id_strategy: ANY
+  #     hapi.fhir.nats: "nats://nats:4222"
+  #   depends_on: 
+  #     - db
+  #   ports:
+  #     - 5001:8080
   db:
     image: postgres
     command: 
