@@ -17,8 +17,7 @@
         console.log(response.data)
       }).catch(err=>{
         alert(err)
-      });
-    
+      })
   };
 </script>
 
